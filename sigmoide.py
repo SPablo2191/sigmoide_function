@@ -12,4 +12,19 @@ def sigmoide_function(z):
     return (1/(1+math.exp(-z)))
 
 if __name__ == "__main__":
-    print(f"La probabilidad es de:{sigmoide_function(10)}")
+    """
+    A partir de la función sigmoide_function, se construira el siguiente perceptron basandonos en el caso
+    de predecir si la persona va a viajar o no contemplando variables booleanas las cuales son:
+    dinero,tiempo y clima
+    """
+    inputs = [0,1,1]
+    weights = [2,1,2]
+    total = 0
+    for i in range (len(inputs)):
+        total += inputs[i]*weights[i]
+    # definimos un umbral de si el resultado es mayor a 0,5 se viaja
+    probability = sigmoide_function(total)
+    if probability>0.5:
+        print(f'probabilidad:{probability} => Viajamos 😁')
+    else:
+        print(f'probabilidad:{probability}  =>No viajamos 😔')
