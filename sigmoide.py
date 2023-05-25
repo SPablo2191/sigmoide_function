@@ -22,7 +22,7 @@ if __name__ == "__main__":
     total = 0
     for i in range (len(inputs)):
         total += inputs[i]*weights[i]
-    # definimos un umbral de si el resultado es mayor a 0,5 se viaja
+    # definimos un umbral de si el resultado es mayor a 0.5 se viaja
     probability = sigmoide_function(total)
     if probability>0.5:
         print(f'probabilidad:{probability} => Viajamos 😁')
