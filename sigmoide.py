@@ -17,14 +17,15 @@ if __name__ == "__main__":
     de predecir si la persona va a viajar o no contemplando variables booleanas las cuales son:
     dinero,tiempo y clima
     """
-    inputs = [0,1,1]
-    weights = [2,1,2]
+    inputs = [1,1,1]
+    weights = [2,1,1]
+    bias = 0.01
     total = 0
     for i in range (len(inputs)):
-        total += inputs[i]*weights[i]
+        total += inputs[i]*weights[i]+bias
     # definimos un umbral de si el resultado es mayor a 0.5 se viaja
-    probability = sigmoide_function(total)
+    probability = round(sigmoide_function(total),ndigits=1)
     if probability>0.5:
-        print(f'probabilidad:{probability} => Viajamos 😁')
+        print(f'probabilidad: {probability} => Viajamos 😁')
     else:
-        print(f'probabilidad:{probability}  =>No viajamos 😔')
+        print(f'probabilidad: {probability}  =>No viajamos 😔')
